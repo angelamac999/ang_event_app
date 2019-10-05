@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.contrib.auth.models import Permission
 from django.contrib.auth import get_user_model
 
-User=get_user_model()
+User = get_user_model()
 
 
 class Event(models.Model):
@@ -14,7 +14,7 @@ class Event(models.Model):
     start_time = models.DateTimeField('start time and date') 
     end_time = models.DateTimeField('end time and date')
     categories = models.ManyToManyField('Category', related_name='events')
-    host = models.ForeignKey(User, on_delete=models.CASCADE, related_name='events')
+    host = models.ForeignKey(User, on_delete=models.CASCADE, related_name='events', blank=True)
     # image = models.ImageField(upload_to='profile_image', blank=True)
 
     # email = models.ForeignKey(email, on_delete=models.CASCADE)

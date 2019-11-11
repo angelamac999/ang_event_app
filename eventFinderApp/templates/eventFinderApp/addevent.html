@@ -8,12 +8,34 @@
 
 <div class = "event-container">
 
-        <form action="" method="post">
+<h2>Add Event</h2>
+
+    {% comment %} <form method="POST" class="event-form">{% csrf_token %} {% endcomment %}
+    <form class='' action="" method="post"> {% csrf_token %} 
+      {{ form|crispy }}
+ 
+        <input type="submit" value="save"
+    </form>
+
+
+        {% comment %} <form action="" method="post">
                 {% csrf_token %}
                 {{ form|crispy }}
-            <input type="submit" value="Create" id="submit">
-            </form>
+           
+                <input type="submit" value="Create" id="submit">
+        </form> {% endcomment %}
+
+
+            {% comment %} {% if messages %}
+                <ul class="messages">
+                        {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                </ul>
+            {% endif %} {% endcomment %}
 </div>
 {% endblock %}
 
-   
+
+{% comment %} //if submit shows a message - else show the form
+   get rid of the thanks  {% endcomment %}

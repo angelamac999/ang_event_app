@@ -11,5 +11,23 @@
 <h4>Ends at: {{ event.end_time }}</h4>
 <br>
 <h6> Why not go along! </h6>
+ <a href="{{EditEventForm}}"><button id="edit-event"> Edit event</button></a>
 
-{% endblock %}
+{% endblock %} 
+
+
+
+{% comment %} {% extends 'base.html' %}
+
+{% block content %}
+    <div class="event">
+        {% if event.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'edit_event' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <h2>{{ event.title }}</h2>
+        <p>{{ event.text|linebreaksbr }}</p>
+    </div>
+{% endblock %} {% endcomment %}

@@ -27,11 +27,24 @@ header {
 
 nav a {
     margin: 0 10px;
-    text-transform: capitalize;
+    list-style-type: none;
+}
+
+li {
+    list-style-type: none;
 }
 
 a {
     color: #ff006f;
+    list-style:none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.nav {
+    list-style-type: none;
 }
 
 p {

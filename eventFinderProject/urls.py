@@ -26,6 +26,7 @@ urlpatterns = [
     path("profile/edit/", include("users.urls")),
     path('api/', include(router.urls)),
     path(r'api-auth-token/', views.obtain_auth_token),
+    # url(r'^$/', include('eventFinderApp.urls')), #added this.
     
 ] 
 
